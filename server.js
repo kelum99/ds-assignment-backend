@@ -29,6 +29,9 @@ app.use("/api/login", loginRoute);
 const movieRoute = require("./src/Routes/movie.routes");
 app.use("/api/movie", movieRoute);
 
+const bookingRoute = require("./src/Routes/booking.routes");
+app.use("/api/booking", bookingRoute);
+
 app.listen(4000, (err) => {
   if (!err) {
     console.log("successfully connected to the port ", 4000);
