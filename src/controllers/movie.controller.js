@@ -37,7 +37,8 @@ exports.getAllMovies = async (req, res) => {
 
 exports.deleteMovie = async (req, res) => {
   try {
-    const deleteMovie = await Movie.deleteOne(req.params);
+    const deleteMovie = await Movie.findByIdAndRemove(req.params.id);
+    console.log("sada", req.params);
     res.json(deleteMovie);
   } catch (e) {
     console.log("error", e);

@@ -32,6 +32,9 @@ const ticketSchema = new mongoose.Schema({
   status: {
     type: String,
   },
+  subTotal: {
+    type: Number,
+  },
 });
 
 const ticket = mongoose.model("Tickets", ticketSchema);

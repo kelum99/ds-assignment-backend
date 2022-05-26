@@ -27,7 +27,7 @@ exports.getAllMovieAdmins = async (req, res) => {
 
 exports.deleteMovieAdmin = async (req, res) => {
   try {
-    const deleteMovieAdmin = await MovieAdmin.deleteOne(res.body);
+    const deleteMovieAdmin = await MovieAdmin.findByIdAndRemove(req.params.id);
     res.json(deleteMovieAdmin);
   } catch (e) {
     console.log("error", e);

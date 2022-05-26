@@ -21,6 +21,7 @@ exports.login = async (req, res) => {
             _id: result1._id,
             email: result1.email,
             nic: result1.nic,
+            name: result1.name,
             role: result1.role,
           },
         },

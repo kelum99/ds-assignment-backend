@@ -27,7 +27,7 @@ exports.getUserTickets = async (req, res) => {
 
 exports.deleteTicket = async (req, res) => {
   try {
-    const deleteTicket = await Ticket.deleteOne(req.params);
+    const deleteTicket = await Ticket.findByIdAndRemove(req.params.id);
     res.json(deleteTicket);
   } catch (e) {
     console.log("error", e);

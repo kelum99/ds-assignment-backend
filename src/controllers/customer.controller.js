@@ -6,7 +6,9 @@ exports.createCustomer = async (req, res) => {
     const customer = new Customer(req.body);
     const savedCustomer = await customer.save();
     if (savedCustomer) {
-      res.status(201).send({ message: "success!", data: savedCustomer });
+      res
+        .status(201)
+        .send({ message: "success customer!", data: savedCustomer });
     } else {
       res.status(400).send({ message: "failed!", data: savedCustomer });
     }
